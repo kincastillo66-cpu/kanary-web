@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
+    <!-- SEO Básico -->
     <title>Kanary - Envía y recibe dinero con un alias</title>
     <meta name="description" content="Kanary es una billetera digital para enviar y recibir dólares digitales (USDC y USDT) entre personas usando solo un alias, sin bancos ni intermediarios.">
     <meta name="keywords" content="Kanary, billetera digital, USDC, USDT, enviar dinero, alias, criptomonedas, fintech, pagos p2p">
     <meta name="author" content="Eulises Castillo">
     <link rel="canonical" href="https://kincastillo66-cpu.github.io/kanary-web/">
 
-   
+    <!-- Verificación de Google Search Console -->
     <meta name="google-site-verification" content="YanSbG1VdMtcT3Hm3-KoXuh9oY6NtZrM1sXvZEAwXOU" />
 
     <!-- Open Graph (Para WhatsApp, Facebook, LinkedIn) -->
@@ -19,16 +19,16 @@
     <meta property="og:url" content="https://kincastillo66-cpu.github.io/kanary-web/">
     <meta property="og:title" content="Kanary - Envía y recibe dinero con un alias">
     <meta property="og:description" content="La billetera digital para enviar y recibir dólares digitales usando solo un alias. Simple, privada y sin intermediarios.">
-    <!-- Nota: Sube una imagen a tu repositorio (ej. logo.png) y pon la URL aquí para que se vea al compartir -->
     <meta property="og:image" content="https://kincastillo66-cpu.github.io/kanary-web/logo.png">
 
-   
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AppKanary">
     <meta name="twitter:title" content="Kanary - Envía y recibe dinero con un alias">
     <meta name="twitter:description" content="La billetera digital para enviar y recibir dólares digitales usando solo un alias. Simple, privada y sin intermediarios.">
     <meta name="twitter:image" content="https://kincastillo66-cpu.github.io/kanary-web/logo.png">
 
-   
+    <!-- Datos Estructurados JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -45,7 +45,10 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-      }
+      },
+      "sameAs": [
+        "https://x.com/AppKanary"
+      ]
     }
     </script>
 
@@ -77,9 +80,18 @@
         .steps { background: var(--card-bg); padding: 24px; border-radius: 20px; border: 1px solid var(--border); margin-bottom: 30px; }
         .steps ol { padding-left: 22px; color: var(--text-muted); }
         .steps li { margin-bottom: 10px; }
+        
+        /* Sección de descarga y lista de espera */
         .download-section { text-align: center; background: var(--card-bg); padding: 40px 20px; border-radius: 24px; border: 1px solid var(--border); margin: 40px 0; }
         .download-section h2 { font-size: 24px; margin-bottom: 12px; }
         .download-section p { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+        
+        .waitlist-container { margin: 30px auto 0 auto; max-width: 600px; background: var(--bg); border-radius: 16px; padding: 20px; border: 1px dashed var(--border); }
+        .waitlist-container h3 { font-size: 18px; margin-bottom: 10px; color: var(--text); }
+        .waitlist-container p { font-size: 13px; margin-bottom: 15px; }
+        /* Estilo para el iframe del formulario */
+        .waitlist-iframe { width: 100%; height: 400px; border: none; border-radius: 8px; background: #fff; }
+
         .buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
         .btn { background: transparent; color: var(--text-muted); padding: 12px 18px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 13px; border: 1px dashed var(--text-muted); opacity: 0.7; cursor: not-allowed; }
         footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
@@ -98,6 +110,7 @@
             <nav>
                 <a href="privacy.html">Privacidad</a>
                 <a href="terms.html">Términos</a>
+                <a href="https://x.com/AppKanary" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
                 <a href="#descargar">Descargar</a>
             </nav>
         </header>
@@ -154,7 +167,8 @@
             <h2 class="section-title">¿Cómo empiezo?</h2>
             <div class="steps">
                 <ol>
-                    <li>Descarga Kanary en tu teléfono.</li>
+                    <li>Regístrate en la lista de espera para ser de los primeros en probar Kanary.</li>
+                    <li>Descarga la app (próximamente).</li>
                     <li>Inicia sesión con tu cuenta de Google.</li>
                     <li>Elige tu alias único.</li>
                     <li>Deposita USDC o USDT desde otra billetera o exchange.</li>
@@ -165,7 +179,24 @@
             <section id="descargar" class="download-section">
                 <h2>Descarga Kanary</h2>
                 <p>Próximamente disponible en las principales tiendas de aplicaciones.</p>
-                <div class="buttons">
+                
+                <!-- SECCIÓN DE LISTA DE ESPERA -->
+                <div class="waitlist-container">
+                    <h3>Únete a la lista de espera</h3>
+                    <p>Déjanos tu correo y te avisaremos en cuanto la app esté lista para descargar.</p>
+                    
+                    <!-- 
+                        INSTRUCCIONES: 
+                        Reemplaza el 'src' del iframe de abajo con el enlace de tu formulario de Tally o Google Forms.
+                        Ejemplo: src="https://tally.so/embed/tu_id_aqui"
+                    -->
+                    <iframe class="waitlist-iframe" src="about:blank" title="Formulario de lista de espera"></iframe>
+                    
+                    <p style="font-size: 11px; margin-top: 10px;">No enviaremos spam. Solo te avisaremos cuando Kanary esté lista.</p>
+                </div>
+                <!-- FIN SECCIÓN LISTA DE ESPERA -->
+
+                <div class="buttons" style="margin-top: 30px;">
                     <a href="#" class="btn">Google Play (Próximamente)</a>
                     <a href="#" class="btn">Samsung Galaxy Store (Próximamente)</a>
                     <a href="#" class="btn">Huawei AppGallery (Próximamente)</a>
@@ -182,6 +213,7 @@
             <div style="margin-top: 10px;">
                 <a href="privacy.html">Política de Privacidad</a>
                 <a href="terms.html">Términos y Condiciones</a>
+                <a href="https://x.com/AppKanary" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
             </div>
             <p class="creator">Creado y desarrollado por Eulises Castillo. Soporte: companyflowsoporte@gmail.com</p>
         </footer>
