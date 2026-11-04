@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abriendo Kanary...</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; background: #F4F0E6; color: #2C2825; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+        .container { padding: 20px; max-width: 400px; }
+        h1 { font-size: 24px; margin-bottom: 10px; }
+        p { color: #736B63; margin-bottom: 20px; }
+        .btn { background: #26A17B; color: white; padding: 14px 24px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Abriendo Kanary...</h1>
+        <p id="message">Si la aplicación no se abre automáticamente, es posible que no la tengas instalada.</p>
+        <div id="fallback" style="display: none;">
+            <p>Descarga Kanary para completar este pago.</p>
+            <a href="index.html" class="btn">Ir a la Web</a>
+        </div>
+    </div>
+
+    <script>
+        // Capturamos todos los parámetros del link (ej: ?to=@usuario&amount=10)
+        const params = window.location.search;
+        
+        // Intentamos abrir la app usando el esquema personalizado
+        const appUrl = "kanary://pay" + params;
+        
+        // Redirigimos a la app
+        window.location.href = appUrl;
+
+        // Si después de 2.5 segundos seguimos en el navegador, mostramos el botón de descarga
+        setTimeout(function() {
+            document.getElementById('message').style.display = 'none';
+            document.getElementById('fallback').style.display = 'block';
+        }, 2500);
+    </script>
+</body>
+</html>
