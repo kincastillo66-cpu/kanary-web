@@ -21,7 +21,7 @@
     <div class="container">
         <a href="index.html" class="back-link">&larr; Volver al inicio</a>
         <h1>Política de Privacidad de Kanary</h1>
-        <p><strong>Última actualización:</strong> 03 de noviembre de 2026</p>
+        <p><strong>Última actualización:</strong> 05 de noviembre de 2026</p>
 
         <h2>1. Introducción y Ámbito de Aplicación</h2>
         <p>Bienvenido a Kanary. La presente Política de Privacidad describe cómo recopilamos, utilizamos, protegemos y compartimos la información en relación con nuestra aplicación móvil de monedero de autocustodia (en adelante, "Kanary" o "la App"). Kanary es una herramienta tecnológica que te permite gestionar tus propias llaves privadas y transaccionar con dólares digitales (USDC/USDT). <strong>No somos un banco, exchange ni custodio financiero.</strong> Al usar Kanary, aceptas las prácticas descritas en este documento.</p>
@@ -32,7 +32,8 @@
         <h2>3. Datos que Recopilamos y Cómo los Obtenemos</h2>
         <p>Kanary se ha diseñado bajo el principio de <strong>minimización de datos</strong>. Solo recopilamos lo estrictamente necesario para que la App funcione:</p>
         <ul>
-            <li><strong>Datos de Autenticación:</strong> Para crear tu cuenta, utilizamos un servicio de autenticación conectado a Google. De este proceso obtenemos: tu nombre, dirección de correo electrónico e identificador único de Google. <strong>Kanary no recibe, no ve y no almacena tu contraseña de Google.</strong></li>
+            <li><strong>Datos de Autenticación (Método Google):</strong> Para crear tu cuenta mediante este método, utilizamos un servicio de autenticación conectado a Google. De este proceso obtenemos: tu nombre, dirección de correo electrónico e identificador único. <strong>Kanary no recibe, no ve y no almacena tu contraseña de Google.</strong></li>
+            <li><strong>Datos de Autenticación (Método Frase Semilla):</strong> Si creas o importas una billetera usando una frase semilla, <strong>no recopilamos ningún dato personal tuyo</strong> (ni nombre, ni correo). Solo interactuamos con la dirección pública generada por tu dispositivo.</li>
             <li><strong>Datos de la red pública:</strong> Al usar Kanary, se genera una dirección pública y un alias (ej. @usuario). Ten en cuenta que las transacciones y direcciones registradas en una red pública son visibles públicamente en exploradores de bloques.</li>
             <li><strong>Datos Almacenados Localmente en tu Dispositivo:</strong> El historial de transacciones, tus contactos, tus preferencias y la caché de saldos se almacenan <strong>exclusivamente en tu teléfono</strong> mediante una base de datos local cifrada. Kanary no tiene servidores propios que almacenen esta información.</li>
         </ul>
@@ -83,31 +84,34 @@
             <li><strong>Minimización:</strong> Al no almacenar datos en servidores centrales, reducimos drásticamente el riesgo de brechas de seguridad masivas.</li>
         </ul>
 
-        <h2>9. Retención y Eliminación de Datos</h2>
+        <h2>9. Manejo Específico de la Frase Semilla (BIP39)</h2>
+        <p>Si el usuario elige crear o importar una cuenta mediante el método de frase semilla (BIP39), se aplican las siguientes condiciones de privacidad:</p>
         <ul>
-            <li><strong>Datos Locales:</strong> Se eliminan automáticamente cuando desinstalas la App o borras los datos de la aplicación en tu teléfono.</li>
+            <li>La frase semilla de 12 palabras <strong>se genera directamente en el dispositivo del usuario</strong> y nunca se transmite por la red.</li>
+            <li>Se almacena de forma cifrada en el almacenamiento seguro local del teléfono (Keystore/Keychain).</li>
+            <li><strong>Kanary no tiene acceso, no recopila, no ve, no respalda y no almacena la frase semilla en ningún servidor propio ni de terceros.</strong></li>
+            <li>Dado que la frase semilla reside únicamente en el dispositivo del usuario, es responsabilidad exclusiva de este mantenerla segura.</li>
+        </ul>
+
+        <h2>10. Retención y Eliminación de Datos</h2>
+        <ul>
+            <li><strong>Datos Locales:</strong> Se eliminan automáticamente cuando desinstalas la App o borras los datos de la aplicación en tu teléfono. Esto incluye la frase semilla almacenada localmente.</li>
             <li><strong>Datos en la red pública:</strong> La información registrada en la red pública, como direcciones, transacciones y alias, es <strong>inmutable e imborrable</strong> por diseño. Kanary no puede eliminar ni modificar tu historial en la red.</li>
         </ul>
 
-        <h2>10. Derechos del Usuario</h2>
-        <p>Dependiendo de tu jurisdicción, tienes derecho a:</p>
-        <ul>
-            <li>Acceder, rectificar o eliminar tus datos locales.</li>
-            <li>Retirar tu consentimiento en cualquier momento, por ejemplo desactivando el acceso a la cámara.</li>
-            <li>Oponerte al tratamiento de tus datos.</li>
-        </ul>
-        <p>Para ejercer estos derechos, contáctanos en <strong>companyflowsoporte@gmail.com</strong>. Ten en cuenta que no podemos eliminar datos de la red pública.</p>
+        <h2>11. Derechos del Usuario</h2>
+        <p>Dependiendo de tu jurisdicción, tienes derecho a acceder, rectificar o eliminar tus datos locales, retirar tu consentimiento en cualquier momento (por ejemplo, desactivando el acceso a la cámara) u oponerte al tratamiento de tus datos. Para ejercer estos derechos, contáctanos en <strong>companyflowsoporte@gmail.com</strong>. Ten en cuenta que no podemos eliminar datos de la red pública.</p>
 
-        <h2>11. Privacidad de Menores de Edad</h2>
-        <p>Kanary no está dirigida a menores de 18 años. No recopilamos intencionadamente datos de menores. Si un menor se registra, lo hace en contravención de nuestros Términos y Condiciones, y la responsabilidad recae exclusivamente en sus padres o tutores legales. Si descubrimos que un menor ha proporcionado datos, tomaremos medidas para restringir el acceso.</p>
+        <h2>12. Privacidad de Menores de Edad</h2>
+        <p>Kanary no está dirigida a menores de 18 años. No recopilamos intencionadamente datos de menores. Si un menor se registra, lo hace en contravención de nuestros Términos y Condiciones, y la responsabilidad recae exclusivamente en sus padres o tutores legales.</p>
 
-        <h2>12. Transferencias Internacionales de Datos</h2>
-        <p>Al interactuar con la red pública y proveedores de infraestructura tecnológica, tus datos técnicos, como tu dirección pública, pueden ser procesados en servidores distribuidos globalmente. Al usar la App, aceptas esta naturaleza descentralizada y transfronteriza de la tecnología.</p>
+        <h2>13. Transferencias Internacionales de Datos</h2>
+        <p>Al interactuar con la red pública y proveedores de infraestructura tecnológica, tus datos técnicos (como tu dirección pública) pueden ser procesados en servidores distribuidos globalmente. Al usar la App, aceptas esta naturaleza descentralizada y transfronteriza de la tecnología.</p>
 
-        <h2>13. Cambios en esta Política</h2>
+        <h2>14. Cambios en esta Política</h2>
         <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos sobre cambios significativos mediante un aviso en la App o actualizando la fecha en la parte superior de este documento. El uso continuado de Kanary después de cualquier cambio constituye tu aceptación.</p>
 
-        <h2>14. Contacto</h2>
+        <h2>15. Contacto</h2>
         <p>Si tienes preguntas sobre esta Política de Privacidad, contáctanos en: <strong>companyflowsoporte@gmail.com</strong>.</p>
     </div>
 </body>
