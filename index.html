@@ -54,55 +54,192 @@
 
     <style>
         :root {
+            /* Paleta original de Kanary */
             --bg: #F4F0E6;
             --text: #2C2825;
             --text-muted: #736B63;
-            --card-bg: #FFFFFF;
             --accent: #26A17B;
-            --border: #E2D9CC;
+            
+            /* Colores para el efecto Neumórfico */
+            --shadow-light: #FFFFFF;
+            --shadow-dark: #D9D0C1; /* Tono más oscuro de tu fondo */
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            padding-bottom: 40px;
+        }
+
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
-        .logo { font-size: 24px; font-weight: 800; letter-spacing: -1px; }
-        nav a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-size: 14px; font-weight: 600; transition: color 0.2s; }
-        nav a:hover { color: var(--text); }
-        .hero { text-align: center; padding: 30px 0 20px 0; }
+
+        /* Header con relieve sutil */
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 30px; 
+            border-radius: 20px;
+            background: var(--bg);
+            box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+            margin-bottom: 50px; 
+        }
+
+        .logo { font-size: 26px; font-weight: 800; letter-spacing: -1px; color: var(--text); }
+        
+        nav a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            margin-left: 20px; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+            padding: 8px 12px;
+            border-radius: 10px;
+        }
+        nav a:hover { 
+            color: var(--accent); 
+            box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+        }
+
+        .hero { text-align: center; padding: 20px 0 40px 0; }
         .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1.5px; }
-        .hero p { font-size: 18px; color: var(--text-muted); max-width: 650px; margin: 0 auto 30px auto; }
-        .section-title { font-size: 26px; font-weight: 800; margin: 40px 0 16px 0; letter-spacing: -0.5px; }
-        .section-sub { font-size: 16px; color: var(--text-muted); margin-bottom: 20px; max-width: 750px; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .feature-card { background: var(--card-bg); padding: 24px; border-radius: 20px; border: 1px solid var(--border); }
-        .feature-card h3 { font-size: 18px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+
+        .section-title { font-size: 26px; font-weight: 800; margin: 60px 0 20px 0; letter-spacing: -0.5px; text-align: center; }
+        
+        /* Tarjetas con efecto Extruido (Sobresalen) */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        
+        .feature-card { 
+            background: var(--bg); 
+            padding: 30px; 
+            border-radius: 24px; 
+            box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+            transform: translateY(2px);
+        }
+
+        .feature-card h3 { font-size: 18px; margin-bottom: 12px; color: var(--text); }
         .feature-card p { font-size: 14px; color: var(--text-muted); }
-        .steps { background: var(--card-bg); padding: 24px; border-radius: 20px; border: 1px solid var(--border); margin-bottom: 30px; }
-        .steps ol { padding-left: 22px; color: var(--text-muted); }
-        .steps li { margin-bottom: 10px; }
 
-        /* Sección de descarga */
-        .download-section { text-align: center; background: var(--card-bg); padding: 40px 20px; border-radius: 24px; border: 1px solid var(--border); margin: 40px 0; }
-        .download-section h2 { font-size: 24px; margin-bottom: 12px; }
-        .download-section p { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+        /* Sección de pasos */
+        .steps { 
+            background: var(--bg); 
+            padding: 40px; 
+            border-radius: 24px; 
+            box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
+            margin-bottom: 40px; 
+        }
+        
+        .steps ol { padding-left: 20px; color: var(--text-muted); font-weight: 500; }
+        .steps li { margin-bottom: 15px; padding-left: 10px; }
+        .steps li::marker { color: var(--accent); font-weight: bold; font-size: 1.2em; }
 
-        /* Botón de descarga principal */
-        .btn-download { display: inline-block; background: var(--accent); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 18px; margin-bottom: 20px; transition: opacity 0.2s; }
-        .btn-download:hover { opacity: 0.9; }
+        /* Sección de descarga (Hundida / Inset) */
+        .download-section { 
+            text-align: center; 
+            background: var(--bg); 
+            padding: 50px 30px; 
+            border-radius: 30px; 
+            box-shadow: inset 10px 10px 20px var(--shadow-dark), inset -10px -10px 20px var(--shadow-light);
+            margin: 60px 0; 
+        }
 
-        /* Caja de seguridad */
-        .security-box { background: var(--bg); padding: 20px; border-radius: 16px; border: 1px solid var(--border); max-width: 600px; margin: 0 auto; text-align: left; }
-        .security-box p { margin-bottom: 8px; color: var(--text); }
-        .security-box .vt-link { display: inline-block; color: var(--accent); font-weight: bold; font-size: 13px; margin-bottom: 12px; text-decoration: none; }
-        .security-box .hash-text { font-size: 11px; color: var(--text-muted); font-family: monospace; word-break: break-all; background: #fff; padding: 10px; border-radius: 8px; border: 1px solid var(--border); }
+        .download-section h2 { font-size: 28px; margin-bottom: 12px; }
+        .download-section p { color: var(--text-muted); font-size: 15px; margin-bottom: 30px; }
 
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
-        footer a { color: var(--text-muted); text-decoration: underline; margin: 0 10px; }
-        .creator { margin-top: 10px; font-size: 12px; color: var(--text-muted); }
+        /* Botón principal */
+        .btn-download { 
+            display: inline-block; 
+            background: var(--bg); 
+            color: var(--accent); 
+            padding: 18px 40px; 
+            border-radius: 16px; 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 18px; 
+            margin-bottom: 30px; 
+            box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease;
+            border: none;
+        }
+        
+        .btn-download:hover { 
+            box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+            color: var(--text);
+        }
 
-        @media (max-width: 600px) {
+        /* Caja de seguridad (Súper hundida) */
+        .security-box { 
+            background: var(--bg); 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+            max-width: 600px; 
+            margin: 0 auto; 
+            text-align: left; 
+        }
+        
+        .security-box p { margin-bottom: 10px; color: var(--text); font-size: 15px; }
+        
+        .security-box .vt-link { 
+            display: inline-block; 
+            color: var(--accent); 
+            font-weight: bold; 
+            font-size: 14px; 
+            margin-bottom: 15px; 
+            text-decoration: none; 
+            padding: 8px 15px;
+            border-radius: 10px;
+            background: var(--bg);
+            box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+            transition: 0.2s;
+        }
+
+        .security-box .vt-link:hover {
+            box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+        }
+
+        .security-box .hash-text { 
+            font-size: 12px; 
+            color: var(--text-muted); 
+            font-family: monospace; 
+            word-break: break-all; 
+            background: var(--bg); 
+            padding: 15px; 
+            border-radius: 12px; 
+            box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 40px 0 20px 0; 
+            color: var(--text-muted); 
+            font-size: 13px; 
+            margin-top: 40px;
+        }
+        
+        footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; font-weight: 600; transition: color 0.2s;}
+        footer a:hover { color: var(--accent); }
+        .creator { margin-top: 20px; font-size: 12px; color: var(--text-muted); }
+
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {
             .hero h1 { font-size: 32px; }
-            nav { display: none; }
+            header { flex-direction: column; gap: 15px; padding: 20px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav a { margin-left: 0; }
+            .features { gap: 20px; }
+            .steps { padding: 30px 20px; }
+            .download-section { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -113,7 +250,7 @@
             <nav>
                 <a href="privacy.html">Privacidad</a>
                 <a href="terms.html">Términos</a>
-                <a href="https://x.com/AppKanary" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                <a href="https://x.com/AppKanary" target="_blank" rel="noopener noreferrer">X</a>
                 <a href="https://www.instagram.com/kanary_wallet" target="_blank" rel="noopener noreferrer">Instagram</a>
                 <a href="#descargar">Descargar</a>
             </nav>
@@ -126,7 +263,7 @@
             </section>
 
             <h2 class="section-title">¿Qué es Kanary?</h2>
-            <p class="section-sub">Kanary es una aplicación para enviar y recibir dólares digitales entre personas. No necesitas saber de criptomonedas, llaves privadas ni redes complicadas. Abres la app, eliges un alias y listo.</p>
+            <p style="text-align: center; color: var(--text-muted); max-width: 750px; margin: 0 auto 40px auto;">Kanary es una aplicación para enviar y recibir dólares digitales entre personas. No necesitas saber de criptomonedas, llaves privadas ni redes complicadas. Abres la app, eliges un alias y listo.</p>
 
             <h2 class="section-title">¿Para qué sirve?</h2>
             <div class="features">
@@ -190,8 +327,8 @@
 
                 <!-- Caja de seguridad -->
                 <div class="security-box">
-                    <p style="font-weight: bold; margin-bottom: 8px;">🔒 Verificado y Seguro</p>
-                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Este APK ha sido analizado por más de 70 motores antivirus y está 100% libre de malware.</p>
+                    <p style="font-weight: 800; margin-bottom: 10px;">🔒 Verificado y Seguro</p>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Este APK ha sido analizado por más de 70 motores antivirus y está 100% libre de malware.</p>
 
                     <a href="https://www.virustotal.com/gui/file/eb7924d3d51230dc32fc731cc5ae6185e0e83bbdcb647bf339a7111eec04e094/detection" target="_blank" rel="noopener noreferrer" class="vt-link">
                         Ver reporte de VirusTotal
@@ -203,7 +340,7 @@
                     </div>
                 </div>
 
-                <p style="font-size: 12px; color: var(--text-muted); margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
                     Al instalar, Android te pedirá permiso para "instalar apps de origen desconocido". Esto es normal al descargar aplicaciones fuera de Google Play Store.
                 </p>
             </section>
@@ -211,9 +348,9 @@
 
         <footer>
             <p>&copy; 2026 Kanary. Todos los derechos reservados.</p>
-            <div style="margin-top: 10px;">
-                <a href="privacy.html">Política de Privacidad</a>
-                <a href="terms.html">Términos y Condiciones</a>
+            <div style="margin-top: 15px;">
+                <a href="privacy.html">Privacidad</a>
+                <a href="terms.html">Términos</a>
                 <a href="https://x.com/AppKanary" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
                 <a href="https://www.instagram.com/kanary_wallet" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
